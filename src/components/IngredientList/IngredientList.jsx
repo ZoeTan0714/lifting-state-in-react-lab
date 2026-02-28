@@ -1,13 +1,13 @@
 // src/components/IngredientList/IngredientList.jsx
 
-const IngredientList = ({onAdd}) => {
+const IngredientList = ({availableIngredients, onAdd}) => {
   return (
     <>
     <ul>
-      {ingredient.map((ingredient, index) => (
-        <div key={index}>
+      {availableIngredients.map((item, index) => (
+        <div key={index} className="itemBox">
             <p>{item.name}</p>
-            <button onClick={() => onAdd(ingredient)}>+</button>
+            <button onClick={() => onAdd(item)}>+</button>
         </div>
       ))}
     </ul>
@@ -15,4 +15,5 @@ const IngredientList = ({onAdd}) => {
   )
 }
 
-export default IngredientList;
+
+export default IngredientList

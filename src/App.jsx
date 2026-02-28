@@ -29,7 +29,7 @@ const App = () => {
     setStack((prev) => [...prev, ingredient])
   };
   
-  const handleRemove = (stack) => {
+  const handleRemove = (index) => {
     setStack((prev) => prev.filter((item,i) => i !== index))
   };
 
@@ -37,7 +37,9 @@ const App = () => {
     <main>
       <h1>Burger Stacker</h1>
       <section>
-        <IngredientList onAdd={handleAdd}/>
+        <IngredientList 
+          availableIngredients={availableIngredients}
+          onAdd={handleAdd}/>
         <BurgerStack stack={stack} onRemove={handleRemove}/>
       </section>
     </main>
@@ -45,3 +47,5 @@ const App = () => {
   };
 
 export default App;
+
+
