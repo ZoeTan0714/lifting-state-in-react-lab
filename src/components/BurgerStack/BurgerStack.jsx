@@ -1,14 +1,19 @@
 // src/components/BurgerStack/BurgerStack.jsx
 
-const BurgerStack = (props) => {
+const BurgerStack = (stack, onRemove) => {
   return (
+    <>
     <ul>
-        {props.burgurstack.map((eachStack, index) => (
-        <li key={index}>{eachStack}</li>
+        {stack.map((item, index) => (
+          <div key={index}>
+            <p>{item.name}</p>
+            <button onClick={() => onRemove(item)}>X</button>
+          </div>
         ))}
     </ul>
+    </>
 
-    <button>X</button>
 )};
 
 export default BurgerStack;
+
