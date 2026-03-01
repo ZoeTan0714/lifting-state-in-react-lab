@@ -5,7 +5,7 @@ const BurgerStack = ({ stack, onRemove }) => {
     <>
     <ul>
         {stack.map((item, index) => (
-          <div key={index}>
+          <div key={index} className="itemBox" style={{ backgroundColor: item.color }}>
             <p>{item.name}</p>
             <button onClick={() => onRemove(index)}>X</button>
           </div>
